@@ -53,5 +53,18 @@ public class Trochoid : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetMouseButtonUp(0))
+        {
+            Change();
+        }
+    }
+
+    private void Change()
+    {
+        Create(Random.Range(1f, 7f), Random.Range(1f, 7f), Random.Range(1f, 7f));
+        SetVertices();
+        _lineRenderer.startColor = new Color(Random.Range(0.1f, 0.7f), Random.Range(0.1f, 0.7f),
+            Random.Range(0.1f, 0.7f), 0.75f);
+        _lineRenderer.endColor = _lineRenderer.startColor;
     }
 }
